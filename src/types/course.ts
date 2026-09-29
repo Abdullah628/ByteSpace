@@ -1,5 +1,12 @@
 import type { ImageAsset } from "./marketing";
 
+export type Category = {
+  name: string;
+  /** Path to a 36px icon in /public. */
+  icon: string;
+  href: string;
+};
+
 export type CourseLevel = "Beginner" | "Intermediate" | "Advanced";
 
 export type Course = {

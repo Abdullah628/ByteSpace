@@ -7,8 +7,8 @@ type SectionHeadingProps = {
   /** id for the section's aria-labelledby. */
   id?: string;
   as?: "h1" | "h2";
-  /** "display" is the hero-sized title (Heading L). */
-  size?: "display" | "default";
+  /** "display": hero title (Heading L). "default": Heading M. "compact": Display XS. */
+  size?: "display" | "default" | "compact";
   align?: "center" | "left";
   tone?: "default" | "inverted";
   className?: string;
@@ -19,6 +19,7 @@ type SectionHeadingProps = {
 const titleSizes = {
   display: "text-display-xs font-semibold sm:text-heading-m lg:text-heading-l",
   default: "text-display-xs font-semibold lg:text-heading-m",
+  compact: "text-heading-s font-semibold sm:text-display-xs sm:font-semibold",
 } as const;
 
 export function SectionHeading({
