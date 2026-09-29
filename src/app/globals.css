@@ -120,6 +120,34 @@
       opacity: 0;
     }
   }
+
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+}
+
+/* The 120px grid drawn over brand-blue surfaces (Figma: 2px white lines at 12% opacity). */
+@utility brand-grid {
+  background-image:
+    linear-gradient(to right, rgb(255 255 255 / 0.12) 2px, transparent 2px),
+    linear-gradient(to bottom, rgb(255 255 255 / 0.12) 2px, transparent 2px);
+  background-size: 120px 120px;
+}
+
+/*
+ * Places a decorative shape using its position in the 1440px Figma frame:
+ * --x = offset of the shape's center from the frame center, --y = top, --size = width.
+ * Below 1440px every value shrinks with the viewport, keeping the composition.
+ */
+@utility decor-position {
+  --u: min(1px, 100vw / 1440);
+  width: calc(var(--size) * var(--u));
+  left: calc(50% + (var(--x) - var(--size) / 2) * var(--u));
+  top: calc(var(--y) * var(--u));
 }
 
 @layer base {

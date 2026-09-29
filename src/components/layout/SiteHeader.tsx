@@ -3,20 +3,28 @@ import Link from "next/link";
 import { Container } from "@/components/ui/Container";
 import { Logo } from "@/components/ui/Logo";
 import { authLinks } from "@/data/navigation";
+import { cn } from "@/lib/utils";
 import { MobileNav } from "./MobileNav";
 import { NavLinks } from "./NavLinks";
 
 type SiteHeaderProps = {
   /** href of the current page, highlighted in the nav. */
   activeHref?: string;
+  /** "overlay" sits transparently on top of a blue hero; "solid" has its own blue bar. */
+  variant?: "overlay" | "solid";
 };
 
 const actionLinkClasses =
   "rounded-sm text-body-m text-gray-50 transition-colors hover:text-accent focus-visible:outline-accent";
 
-export function SiteHeader({ activeHref }: SiteHeaderProps) {
+export function SiteHeader({ activeHref, variant = "solid" }: SiteHeaderProps) {
   return (
-    <header className="relative z-30 bg-primary">
+    <header
+      className={cn(
+        "z-30",
+        variant === "overlay" ? "absolute inset-x-0 top-0" : "relative bg-primary",
+      )}
+    >
       <a
         href="#main"
         className="sr-only rounded-3xl bg-accent px-4 py-2 text-label-m text-gray-950 focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50"
