@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { ImageAsset } from "@/types/marketing";
 import { cn } from "@/lib/utils";
 import { Avatar } from "./Avatar";
@@ -10,6 +11,8 @@ type AvatarStackProps = {
   overflowLabel?: string;
   /** Avatar size in px. */
   size?: number;
+  /** How far each avatar tucks under the previous one, in px. */
+  overlap?: number;
   className?: string;
 };
 
@@ -19,16 +22,20 @@ export function AvatarStack({
   max = avatars.length,
   overflowLabel,
   size = 43,
+  overlap = 16,
   className,
 }: AvatarStackProps) {
   return (
-    <div className={cn("flex items-center -space-x-4", className)}>
+    <div
+      className={cn("flex items-center *:not-first:-ml-(--overlap)", className)}
+      style={{ "--overlap": `${overlap}px` } as CSSProperties}
+    >
       {avatars.slice(0, max).map((avatar) => (
         <Avatar key={avatar.src} src={avatar.src} alt={avatar.alt} size={size} />
       ))}
       {overflowLabel && (
         <span
-          className="flex shrink-0 items-center justify-center rounded-full bg-accent text-body-xs font-bold text-gray-950"
+          className="flex shrink-0 items-center justify-center rounded-full bg-accent text-label-xs font-bold text-gray-950"
           style={{ width: size, height: size }}
         >
           {overflowLabel}

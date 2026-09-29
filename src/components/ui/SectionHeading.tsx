@@ -12,6 +12,8 @@ type SectionHeadingProps = {
   align?: "center" | "left";
   tone?: "default" | "inverted";
   className?: string;
+  /** Extra classes for the heading, e.g. a max width to match the design's line breaks. */
+  titleClassName?: string;
 };
 
 const titleSizes = {
@@ -28,13 +30,15 @@ export function SectionHeading({
   align = "left",
   tone = "default",
   className,
+  titleClassName,
 }: SectionHeadingProps) {
   const inverted = tone === "inverted";
 
   return (
     <div
       className={cn(
-        "flex flex-col gap-4 lg:gap-8",
+        "flex flex-col gap-4",
+        size === "display" && "lg:gap-8",
         align === "center" && "items-center text-center",
         className,
       )}
@@ -45,6 +49,7 @@ export function SectionHeading({
           titleSizes[size],
           "max-lg:text-balance",
           inverted ? "text-white" : "text-gray-950",
+          titleClassName,
         )}
       >
         {title}
