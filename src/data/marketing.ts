@@ -3,7 +3,9 @@ import type {
   ImageAsset,
   Partner,
   ProgressStat,
+  RevenueStat,
   SocialProof,
+  Stat,
 } from "@/types/marketing";
 
 // Student photos are decorative next to the "Happy Students" text, so alt is empty.
@@ -39,3 +41,34 @@ export const partners: Partner[] = [
   { name: "Logoipsum", logo: "/images/partners/partner-4.svg", width: 170, height: 41 },
   { name: "Logoipsum", logo: "/images/partners/partner-5.svg", width: 169, height: 42 },
 ];
+
+export const growth = {
+  title: "Your Path to Professional Growth Starts Here!",
+  description:
+    "Explore our curated selection of courses tailored to enhance your capabilities and accelerate your career journey. Whether you are looking to sharpen specific skills, gain industry expertise, or embark on a new career path entirely, we have the resources you need.",
+  stats: [
+    { value: "12K", label: "Students" },
+    { value: "70+", label: "Courses" },
+    { value: "16", label: "Creators" },
+  ] satisfies Stat[],
+};
+
+export const creatorTools = {
+  title: "Create & Manage Courses Easily.",
+  description:
+    "supports individuals or entities in the creation, publication, and administration of educational courses.",
+  benefits: [
+    "Share Your Expertise",
+    "Monetize Your Passion",
+    "Flexibility and Autonomy",
+    "Build a Community",
+  ],
+  image: {
+    src: "/images/creator-student.png",
+    alt: "Smiling creator wearing headphones and holding a tablet",
+  },
+  revenue: [
+    { label: "Total Revenue", period: "July 1-28", amount: "$120.29", trend: "+12$", progress: 56 },
+    { label: "Year to Date", period: "2023", amount: "$1,200.38", trend: "+12$" },
+  ] satisfies RevenueStat[],
+};

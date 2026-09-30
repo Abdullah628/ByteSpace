@@ -33,6 +33,8 @@
   --color-gray-900: #3a3b3f;
   --color-gray-950: #242528;
 
+  --color-surface: #fafafa; /* Feature sections background (Figma frame fill) */
+
   /* Not in the Figma variables: needed for form validation messages (4.9:1 on white) */
   --color-danger: #d92d20;
 
@@ -136,6 +138,69 @@
     linear-gradient(to right, rgb(255 255 255 / 0.12) 2px, transparent 2px),
     linear-gradient(to bottom, rgb(255 255 255 / 0.12) 2px, transparent 2px);
   background-size: 120px 120px;
+}
+
+/* Figma shadow "A" for cut-out photos: follows the subject's outline instead of the image box. */
+@utility cutout-shadow {
+  filter: drop-shadow(10px 15px 16px rgb(0 0 0 / 0.08)) drop-shadow(26px 37px 36px rgb(0 0 0 / 0.1))
+    drop-shadow(51px 73px 72px rgb(0 0 0 / 0.13));
+}
+
+/*
+ * Soft blurred blue/lime blobs behind the two feature sections (Figma "Frame 15").
+ * Positions are the blob centers in the 1440px frame, relative to its center line;
+ * the frame is split between the two sections at y = 708.
+ */
+@utility bg-growth-blobs {
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(
+      circle 568px at calc(50% - 304px) 102px,
+      rgb(203 252 1 / 0.4),
+      rgb(203 252 1 / 0.09) 53%,
+      rgb(203 252 1 / 0.024) 75%,
+      transparent
+    ),
+    radial-gradient(
+      circle 568px at calc(50% + 659px) 110px,
+      rgb(0 59 226 / 0.08),
+      rgb(0 59 226 / 0.018) 53%,
+      rgb(0 59 226 / 0.005) 75%,
+      transparent
+    ),
+    radial-gradient(
+      circle 568px at calc(50% - 660px) 751px,
+      rgb(0 59 226 / 0.16),
+      rgb(0 59 226 / 0.037) 53%,
+      rgb(0 59 226 / 0.01) 75%,
+      transparent
+    );
+}
+
+@utility bg-creator-blobs {
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(
+      circle 568px at calc(50% + 570px) 648px,
+      rgb(0 59 226 / 0.24),
+      rgb(0 59 226 / 0.055) 53%,
+      rgb(0 59 226 / 0.014) 75%,
+      transparent
+    ),
+    radial-gradient(
+      circle 568px at calc(50% - 660px) 43px,
+      rgb(0 59 226 / 0.16),
+      rgb(0 59 226 / 0.037) 53%,
+      rgb(0 59 226 / 0.01) 75%,
+      transparent
+    ),
+    radial-gradient(
+      circle 336px at calc(50% - 671px) 574px,
+      rgb(203 252 1 / 0.6),
+      rgb(203 252 1 / 0.14) 53%,
+      rgb(203 252 1 / 0.036) 75%,
+      transparent
+    );
 }
 
 /*

@@ -7,8 +7,10 @@ type MediaShowcaseProps = {
   image: ImageAsset & { width: number; height: number };
   /** Decoration drawn behind the image (e.g. the hero's lime ring). */
   background?: ReactNode;
-  /** Floating cards, absolutely positioned by the caller relative to the image box. */
+  /** Floating cards, absolutely positioned by the caller relative to the showcase box. */
   children?: ReactNode;
+  /** Overrides the image's layout, e.g. to place it inside a larger showcase box. */
+  imageClassName?: string;
   sizes: string;
   priority?: boolean;
   className?: string;
@@ -22,6 +24,7 @@ export function MediaShowcase({
   sizes,
   priority,
   className,
+  imageClassName,
 }: MediaShowcaseProps) {
   return (
     <div className={cn("relative", className)}>
@@ -33,7 +36,7 @@ export function MediaShowcase({
         height={image.height}
         sizes={sizes}
         priority={priority}
-        className="relative h-auto w-full"
+        className={cn("relative h-auto w-full", imageClassName)}
       />
       {children}
     </div>

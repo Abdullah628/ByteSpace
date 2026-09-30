@@ -28,3 +28,17 @@ export type SocialProof = {
   avatars: ImageAsset[];
   overflowLabel: string;
 };
+
+export type Stat = {
+  value: string;
+  label: string;
+};
+
+export type RevenueStat = {
+  label: string;
+  period: string;
+  amount: string;
+  trend: string;
+  /** Progress towards a target, 0–100. Shows a bar when set. */
+  progress?: number;
+};

@@ -1,6 +1,8 @@
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { CareerGrowthSection } from "@/components/sections/home/CareerGrowthSection";
 import { CourseCatalogSection } from "@/components/sections/home/CourseCatalogSection";
+import { CreatorToolsSection } from "@/components/sections/home/CreatorToolsSection";
 import { HeroSection } from "@/components/sections/home/HeroSection";
 import { LearningPathsSection } from "@/components/sections/home/LearningPathsSection";
 import { PartnersSection } from "@/components/sections/home/PartnersSection";
@@ -14,6 +16,8 @@ export default function HomePage() {
         <PartnersSection />
         <CourseCatalogSection />
         <LearningPathsSection />
+        <CareerGrowthSection />
+        <CreatorToolsSection />
       </main>
       <SiteFooter />
     </>
