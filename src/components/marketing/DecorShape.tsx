@@ -5,12 +5,16 @@ import { cn } from "@/lib/utils";
 // Figma 3D renders, pre-tinted (hard-light lime or white) and exported at 2x.
 const shapes = {
   "spring-lime": { src: "/images/shapes/spring-lime.webp", size: 770 },
-  "spring-lime-vertical": { src: "/images/shapes/spring-lime-vertical.webp", size: 430 },
+  "spring-lime-vertical": { src: "/images/shapes/spring-lime-vertical.webp", size: 660 },
   "spring-white": { src: "/images/shapes/spring-white.webp", size: 660 },
   "spring-white-small": { src: "/images/shapes/spring-white-small.webp", size: 350 },
   "torus-white": { src: "/images/shapes/torus-white.webp", size: 684 },
+  "torus-lime": { src: "/images/shapes/torus-lime.webp", size: 684 },
   "cylinder-lime": { src: "/images/shapes/cylinder-lime.webp", size: 740 },
+  "cylinder-white": { src: "/images/shapes/cylinder-white.webp", size: 740 },
   "pyramid-white": { src: "/images/shapes/pyramid-white.webp", size: 376 },
+  "pyramid-lime": { src: "/images/shapes/pyramid-lime.webp", size: 376 },
+  "cone-white": { src: "/images/shapes/cone-white.webp", size: 376 },
 } as const;
 
 /**

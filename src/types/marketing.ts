@@ -42,3 +42,10 @@ export type RevenueStat = {
   /** Progress towards a target, 0–100. Shows a bar when set. */
   progress?: number;
 };
+
+export type Testimonial = {
+  name: string;
+  role: string;
+  quote: string;
+  avatar: string;
+};

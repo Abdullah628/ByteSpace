@@ -72,3 +72,16 @@ export const creatorTools = {
     { label: "Year to Date", period: "2023", amount: "$1,200.38", trend: "+12$" },
   ] satisfies RevenueStat[],
 };
+
+export const creatorCta = {
+  title: "Unlock Your Potential as a Creator with ByteSpace",
+  description:
+    "Experience the collaboration of numerous creators and an expanding selection of courses. Register now and become a part of a community comprising over 10,000 local and international creators. Utilize our Course Editor, and showcase your expertise by publishing your finest course on the ByteSpace Course Library.",
+  action: { label: "Join as Creator", href: "/signup" },
+};
+
+export const testimonialsIntro = {
+  title: "Discover What Our Community Is Saying",
+  description:
+    "At ByteSpace, our vibrant community of learners and creators is at the heart of what we do. Hear directly from those who have experienced the transformative journey of learning and creating on our platform. Explore testimonials that reflect the diverse perspectives of enthusiastic learners and accomplished creators.",
+};

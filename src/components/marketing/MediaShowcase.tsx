@@ -35,7 +35,9 @@ export function MediaShowcase({
         width={image.width}
         height={image.height}
         sizes={sizes}
-        priority={priority}
+        // Next 16 deprecates `priority`; eager + high fetch priority is the recommended LCP setup.
+        loading={priority ? "eager" : undefined}
+        fetchPriority={priority ? "high" : undefined}
         className={cn("relative h-auto w-full", imageClassName)}
       />
       {children}

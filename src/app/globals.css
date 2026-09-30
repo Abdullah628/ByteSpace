@@ -203,6 +203,32 @@
     );
 }
 
+@utility bg-testimonial-blobs {
+  background-color: var(--color-surface);
+  background-image:
+    radial-gradient(
+      circle 336px at calc(50% + 11px) 198px,
+      rgb(203 252 1 / 0.6),
+      rgb(203 252 1 / 0.14) 53%,
+      rgb(203 252 1 / 0.036) 75%,
+      transparent
+    ),
+    radial-gradient(
+      circle 568px at calc(50% + 690px) 327px,
+      rgb(203 252 1 / 0.4),
+      rgb(203 252 1 / 0.09) 53%,
+      rgb(203 252 1 / 0.024) 75%,
+      transparent
+    ),
+    radial-gradient(
+      circle 568px at calc(50% - 593px) 717px,
+      rgb(0 59 226 / 0.24),
+      rgb(0 59 226 / 0.055) 53%,
+      rgb(0 59 226 / 0.014) 75%,
+      transparent
+    );
+}
+
 /*
  * Places a decorative shape using its position in the 1440px Figma frame:
  * --x = offset of the shape's center from the frame center, --y = top, --size = width.
