@@ -14,6 +14,8 @@ type AvatarStackProps = {
   /** How far each avatar tucks under the previous one, in px. */
   overlap?: number;
   className?: string;
+  /** Overrides the overflow badge colors, e.g. on a lime surface. */
+  overflowClassName?: string;
 };
 
 /** Overlapping row of avatars, optionally ending in a count badge. */
@@ -24,6 +26,7 @@ export function AvatarStack({
   size = 43,
   overlap = 16,
   className,
+  overflowClassName,
 }: AvatarStackProps) {
   return (
     <div
@@ -35,7 +38,10 @@ export function AvatarStack({
       ))}
       {overflowLabel && (
         <span
-          className="flex shrink-0 items-center justify-center rounded-full bg-accent text-label-xs font-bold text-gray-950"
+          className={cn(
+            "flex shrink-0 items-center justify-center rounded-full bg-accent text-label-xs font-bold text-gray-950",
+            overflowClassName,
+          )}
           style={{ width: size, height: size }}
         >
           {overflowLabel}

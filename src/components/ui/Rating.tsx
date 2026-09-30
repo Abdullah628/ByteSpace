@@ -7,6 +7,8 @@ type RatingProps = {
   /** "sm": 12px text + small lime star (floating cards). "lg": 18px text + gray star (course cards). */
   size?: "sm" | "lg";
   className?: string;
+  /** Overrides the star color, e.g. on a lime surface. */
+  starClassName?: string;
 };
 
 const sizes = {
@@ -24,7 +26,7 @@ const sizes = {
   },
 } as const;
 
-export function Rating({ value, count, size = "sm", className }: RatingProps) {
+export function Rating({ value, count, size = "sm", className, starClassName }: RatingProps) {
   const style = sizes[size];
   const label = `Rated ${value} out of 5${count === undefined ? "" : ` from ${count} reviews`}`;
 
@@ -37,7 +39,7 @@ export function Rating({ value, count, size = "sm", className }: RatingProps) {
       </span>
       <svg
         viewBox={style.viewBox}
-        className={style.star}
+        className={cn(style.star, starClassName)}
         fill="currentColor"
         aria-hidden="true"
         focusable="false"
