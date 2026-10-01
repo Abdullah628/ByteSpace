@@ -7,6 +7,7 @@ import { LoginForm } from "@/components/auth/LoginForm";
 export const metadata: Metadata = {
   title: "Sign In",
   description: "Sign in to ByteSpace to continue learning from hundreds of online courses.",
+  alternates: { canonical: "/login" },
 };
 
 export default function LoginPage() {

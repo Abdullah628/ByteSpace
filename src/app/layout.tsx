@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
+import { siteUrl } from "@/lib/site";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -17,14 +18,30 @@ const satoshi = localFont({
   display: "swap",
 });
 
+const description =
+  "Unlock your creativity, gain valuable knowledge, and grow your business with ByteSpace's wide range of courses from expert creators.";
+
+// The Open Graph / Twitter image comes from app/opengraph-image.png (file convention).
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
     default: "ByteSpace | Learn from Hundreds of Online Courses",
     template: "%s | ByteSpace",
   },
-  description:
-    "Unlock your creativity, gain valuable knowledge, and grow your business with ByteSpace's wide range of courses from expert creators.",
+  description,
   applicationName: "ByteSpace",
+  openGraph: {
+    type: "website",
+    siteName: "ByteSpace",
+    title: "ByteSpace | Learn from Hundreds of Online Courses",
+    description,
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ByteSpace | Learn from Hundreds of Online Courses",
+    description,
+  },
 };
 
 export const viewport: Viewport = {
@@ -34,7 +51,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${poppins.variable} ${satoshi.variable} antialiased`}>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   );
 }

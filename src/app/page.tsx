@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { CareerGrowthSection } from "@/components/sections/home/CareerGrowthSection";
@@ -8,6 +9,10 @@ import { HeroSection } from "@/components/sections/home/HeroSection";
 import { LearningPathsSection } from "@/components/sections/home/LearningPathsSection";
 import { PartnersSection } from "@/components/sections/home/PartnersSection";
 import { TestimonialsSection } from "@/components/sections/home/TestimonialsSection";
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

@@ -7,6 +7,7 @@ import { SignupForm } from "@/components/auth/SignupForm";
 export const metadata: Metadata = {
   title: "Create an Account",
   description: "Join ByteSpace for free to learn from expert creators or publish your own courses.",
+  alternates: { canonical: "/signup" },
 };
 
 export default function SignupPage() {
