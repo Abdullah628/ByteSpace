@@ -20,10 +20,14 @@ Requires Node.js 20.9 or later.
 
 ```bash
 npm install
-npm run dev     # http://localhost:3000
+npm run dev          # start the dev server at http://localhost:3000
+npm run build        # production build
+npm run start        # serve the production build
+npm run lint         # ESLint
+npm run typecheck    # type-check with tsc
+npm run test         # run the tests
+npm run format       # format with Prettier
 ```
-
-Other scripts: `build`, `start`, `lint`, `typecheck`, `test`, `format`.
 
 ## Notes
 
